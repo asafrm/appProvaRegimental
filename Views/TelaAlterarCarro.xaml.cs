@@ -1,9 +1,13 @@
-namespace appProvaRegimental.Views;
-
-public partial class TelaAlterarCarro : ContentPage
+private async void OnSalvarClicked(object sender, EventArgs e)
 {
-	public TelaAlterarCarro()
-	{
-		InitializeComponent();
-	}
+    string modelo = txtModelo.Text;
+    string marca = txtMarca.Text;
+    string ano = txtAno.Text;
+    string placa = txtPlaca.Text;
+
+    await DisplayAlert(
+        "Sucesso",
+        "Dados alterados com sucesso!",
+        "OK"
+    );
 }
