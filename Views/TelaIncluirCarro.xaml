@@ -1,43 +1,21 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="appProvaRegimental.Views.TelaIncluirPessoa"
-             Title="Cadastrar Pessoa">
+             x:Class="appProvaRegimental.Views.TelaIncluirCarro"
+             BackgroundImageSource="fundo.png"
+             Title="Cadastrar Carro">
 
-    <ScrollView>
-        <VerticalStackLayout Padding="20" Spacing="15">
-
-            <Label
-                Text="Cadastro de Pessoa"
-                FontSize="24"
-                FontAttributes="Bold"
-                HorizontalOptions="Center"/>
-
-            <Entry
-                x:Name="txtNome"
-                Placeholder="Nome completo"/>
-
-            <Entry
-                x:Name="txtCpf"
-                Placeholder="CPF"
-                Keyboard="Numeric"/>
-
-            <Entry
-                x:Name="txtTelefone"
-                Placeholder="Telefone"
-                Keyboard="Telephone"/>
-
-            <Entry
-                x:Name="txtEmail"
-                Placeholder="E-mail"
-                Keyboard="Email"/>
-
-            <Button
-                Text="Salvar"
-                Clicked="OnSalvarClicked"
-                BackgroundColor="Green"
-                TextColor="White"/>
-
-        </VerticalStackLayout>
-    </ScrollView>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Salvar" IconImageSource="iconesalvarcarro.png" Clicked="ToolbarItemClickedSalvar"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <Border Stroke="#ffff" Padding="10,5" Margin="4" StrokeShape="RoundRectangle 8,0">
+                <Entry Placeholder="Nome do Carro:" x:Name="txtNomeCarro" FontAttributes="Bold" Margin="4" ClearButtonVisibility="WhileEditing"/>
+            </Border>
+            <Border Stroke="#ffff" Padding="10,5" Margin="4" StrokeShape="RoundRectangle 8,0">
+                <Entry Placeholder="Placa do Carro:" x:Name="txtPlacaCarro" FontAttributes="Bold" Margin="4" ClearButtonVisibility="WhileEditing"/>
+            </Border>
+        </StackLayout>
+    </ContentPage.Content>
 </ContentPage>
