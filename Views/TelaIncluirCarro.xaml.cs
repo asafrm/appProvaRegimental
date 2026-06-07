@@ -1,28 +1,48 @@
+using appProvaRegimental.Model;
 namespace appProvaRegimental.Views;
 
-public partial class TelaIncluirPessoa : ContentPage
+public partial class TelaIncluirCarro : ContentPage
 {
-    public TelaIncluirPessoa()
+    public TelaIncluirCarro()
     {
         InitializeComponent();
     }
 
-    private async void OnSalvarClicked(object sender, EventArgs e)
+    private async void ToolbarItemClickedSalvar(object sender, EventArgs e)
     {
-        string nome = txtNome.Text;
-        string cpf = txtCpf.Text;
-        string telefone = txtTelefone.Text;
-        string email = txtEmail.Text;
-
-        if (string.IsNullOrWhiteSpace(nome))
+        try
         {
-            await DisplayAlert("Aviso", "Informe o nome.", "OK");
-            return;
-        }
 
-        await DisplayAlert(
-            "Sucesso",
-            "Pessoa cadastrada com sucesso!",
-            "OK");
+            if (string.IsNullOrWhiteSpace(txtNomeCarro.Text))
+            {
+                DisplayAlert("Erro", "Por favor, preencha o nome do carro!!", "OK");
+                txtNomeCarro.Focus();
+            }
+            else if (string.IsNullOrWhiteSpace(txtPlacaCarro.Text))
+            {
+                DisplayAlert("Erro", "Por favor, preencha a placa do carro!!", "OK");
+                txtPlacaCarro.Focus();
+            }
+            else
+            {
+                Carro carro1 = new Carro()
+                {
+                    carNome = txtNomeCarro.Text,
+                    carPlaca = txtPlacaCarro.Text,
+                };
+                await App.Database.Insert(carro1);
+
+                await DisplayAlert("Sucesso", "Carro cadastrado com sucesso!", "OK");
+
+                await Navigation.PushAsync(new TelaListaCarro());
+            }
+        }
+        catch (Exception ex)
+        {
+            await DisplayAlert("Erro", $"Ocorreu um erro ao cadastrar o carro:", ex.Message, "OK");
+            txtNomeCarro.Text = "";
+            txtPlacaCarro.Text = "";
+            txtNomeCarro.Focus();
+        }
     }
 }
