@@ -2,40 +2,20 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="appProvaRegimental.Views.TelaAlterarCarro"
+             BackgroundImageSource="fundo.png"
              Title="Alterar Carro">
 
-    <ScrollView>
-        <VerticalStackLayout Padding="20" Spacing="15">
-
-            <Label 
-                Text="Alterar Dados do Carro"
-                FontSize="24"
-                FontAttributes="Bold"
-                HorizontalOptions="Center"/>
-
-            <Entry
-                x:Name="txtModelo"
-                Placeholder="Modelo do carro"/>
-
-            <Entry
-                x:Name="txtMarca"
-                Placeholder="Marca"/>
-
-            <Entry
-                x:Name="txtAno"
-                Placeholder="Ano"
-                Keyboard="Numeric"/>
-
-            <Entry
-                x:Name="txtPlaca"
-                Placeholder="Placa"/>
-
-            <Button
-                Text="Salvar Alterações"
-                Clicked="OnSalvarClicked"
-                BackgroundColor="Blue"
-                TextColor="White"/>
-
-        </VerticalStackLayout>
-    </ScrollView>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="iconesalvarcarro.png" Clicked="ToolbarItemClickedSalvar" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <Border Stroke="#FFFFFF" Padding="10,5" Margin="4" StrokeShape="RoundRectangle 8,0">
+                <Entry Placeholder="Nome do Carro:" x:Name="txtNomeCarro" FontAttributes="Bold" Text="{Binding carNome}" Margin="4" ClearButtonVisibility="WhileEditing" />
+            </Border>
+            <Border Stroke="#FFFFFF" Padding="10,5" Margin="4" StrokeShape="RoundRectangle 8,0">
+                <Entry Placeholder="Placa do Carro:" x:Name="txtPlacaCarro" FontAttributes="Bold" Text="{Binding carPlaca}" Margin="4" ClearButtonVisibility="WhileEditing" />
+            </Border>
+        </StackLayout>
+    </ContentPage.Content>
 </ContentPage>
