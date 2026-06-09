@@ -7,7 +7,7 @@
 
     <!-- Barra de Menu com o método para Incluir um Carro Novo -->
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Incluir Veículo" IconImageSource="iconeincluircarro.png" Clicked="irTelaIncluirCarro" />
+        <ToolbarItem Text="Incluir Veículo" IconImageSource="iconincluircarro.jpg" Clicked="irTelaIncluirCarro" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>

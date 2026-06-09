@@ -6,7 +6,7 @@
              Title="Alterar Carro">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="iconesalvarcarro.png" Clicked="ToolbarItemClickedSalvar" />
+        <ToolbarItem IconImageSource="iconsalvarcarro.jpg" Clicked="ToolbarItemClickedSalvar" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>

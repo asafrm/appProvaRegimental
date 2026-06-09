@@ -6,7 +6,7 @@
              Title="Cadastrar Carro">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Salvar" IconImageSource="iconesalvarcarro.png" Clicked="ToolbarItemClickedSalvar"/>
+        <ToolbarItem Text="Salvar" IconImageSource="iconsalvarcarro.jpg" Clicked="ToolbarItemClickedSalvar"/>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
