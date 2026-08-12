@@ -1,5 +1,5 @@
 Markdown
-# appProvaA1Carro - Prova Regimental
+# Gerenciador de Carros (CRUD) em .NET MAUI & SQLite
 
 ## 📱 Sobre o Projeto
 Este é um aplicativo móvel desenvolvido com o framework .NET MAUI utilizando o Visual Studio 2026. O projeto tem como objetivo principal a implementação de um sistema CRUD (Create, Read, Update, Delete) focado no gerenciamento de uma classe chamada Carro. 
